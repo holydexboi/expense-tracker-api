@@ -15,8 +15,13 @@ const Task = mongoose.model("Tasks", taskSchema);
 const taskValidate = Joi.object({
   name: Joi.string().required(),
   description: Joi.string(),
-  user: Joi.string().required(),
   category: Joi.string().required(),
 });
 
-module.exports = { Task, taskValidate };
+const updateValidate = Joi.object({
+  name: Joi.string(),
+  description: Joi.string(),
+  category: Joi.string(),
+});
+
+module.exports = { Task, taskValidate, updateValidate };

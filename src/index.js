@@ -5,6 +5,7 @@ const cors = require("cors");
 const user = require("../src/controller/user");
 const auth = require("../src/controller/auth");
 const category = require("../src/controller/cateogry");
+const task = require("../src/controller/task");
 require("dotenv").config({ path: ".env" });
 
 mongoose
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/user", user);
 app.use("/auth", auth);
 app.use("/category", category);
+app.use("/task", task);
 
 app.listen(3000, () => {
   console.log("Listening on port 3000");
